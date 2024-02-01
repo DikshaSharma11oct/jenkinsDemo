@@ -1,18 +1,17 @@
 pipeline{
     agent any
     stages{
-        stage("compile"){
+        stage('compile'){
             steps{
-                bat "javac Student.java"
+                bat 'javac Student.java'
             }
         }
-        stage("run"){
+        stage('run'){
             steps{
-                bat "java Student"
+                bat 'java Student'
             }
         }
     }
- //can add some comments after deploying project successfully on jenkins in post
     post{
         always{
             echo 'always print a message'
