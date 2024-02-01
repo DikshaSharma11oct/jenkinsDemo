@@ -3,27 +3,27 @@ pipeline{
     stages{
         stage("compile"){
             steps{
-                sh "javac Students.java"
+                bat "javac Student.java"
             }
         }
         stage("run"){
             steps{
-                sh "java Students"
+                bat "java Student"
             }
         }
     }
  //can add some comments after deploying project successfully on jenkins in post
     post{
         always{
-            sh 'echo "always"'
+            echo 'always print a message'
 
         }
         success{
-            sh 'echo "success"'
+            echo 'success msg'
 
         }
         failure{
-            sh 'echo "failure"'
+            echo 'failure msg'
         }
     }
 }
